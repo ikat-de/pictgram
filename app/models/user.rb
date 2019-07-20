@@ -5,11 +5,12 @@ class User < ApplicationRecord
 
   validates :email,
     presence: true,
-    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+    format: { with: /\A[A-Za-z0-9._+]+@+[A-Za-z]+[.]+[A-Za-z]+\z/i }
 
   validates :password, 
     presence: true,
-    format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i }
+    format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i },
+    length: { minimum: 8, maximum: 32 }
   
   has_secure_password
   
