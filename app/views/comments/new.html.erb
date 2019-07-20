@@ -1,0 +1,17 @@
+<div class="topic-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">Add Comment</h1>
+        <%= form_for @comment, url: comments_create_path do |f| %>
+          <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_area :content, class: 'form-control' %>
+            <%= f.hidden_field :topic_id, :value => params[:topic_id] %>
+          </div>
+          <%= f.submit 'コメント', class: 'btn btn-black btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
