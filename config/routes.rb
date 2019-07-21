@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'topics/index'
   get 'topics/new'
   get 'sessions/new'
   get 'users/new'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
+  post '/favorites/:topic_id/destroy' => 'favorites#destroy', as: 'favorites_destroy'
 
   get '/comments/:topic_id/new' => 'comments#new', as: 'comments'
   post '/comments/:topic_id/create', to: 'comments#create', as: 'comments_create'

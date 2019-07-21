@@ -2,6 +2,8 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users, :comment_users)
     @comments = Comment.all
+    @favorites =  Favorite.all
+    # いいねの数表示機能テスト中
   end
   
   def new
