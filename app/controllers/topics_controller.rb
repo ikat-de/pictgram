@@ -3,13 +3,12 @@ class TopicsController < ApplicationController
     @topics = Topic.all.includes(:favorite_users, :comment_users)
     @comments = Comment.all
     @favorites =  Favorite.all
-    # いいねの数表示機能テスト中
   end
   
   def new
-    if logged_in? == false
-     redirect_to root_path, danger: '投稿するにはログインしてください'
-    end
+    # if logged_in? == false
+    # redirect_to root_path, danger: '投稿するにはログインしてください'
+    # end
     @topic = Topic.new
   end
   
