@@ -17,7 +17,8 @@
                   <%= image_tag 'icons/heart-red.png', class: 'topic-index-icon' %>
                 <% end %>
               <% end %>
-              <%= @favorites.where(topic_id: topic.id).count %>
+              <%#= @favorites.where(topic_id: topic.id).count %>   <%#  修正前  %>
+              <%= topic.favorites.count %>                         <%#  修正後 /models/topic.rbで関連づけしている :favorites をカウント  %>
               <%= link_to comments_path(topic_id: topic.id) do %>
                 <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
               <% end %>

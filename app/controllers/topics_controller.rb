@@ -6,9 +6,6 @@ class TopicsController < ApplicationController
   end
   
   def new
-    # if logged_in? == false
-    # redirect_to root_path, danger: '投稿するにはログインしてください'
-    # end
     @topic = Topic.new
   end
   

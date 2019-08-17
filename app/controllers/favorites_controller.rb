@@ -3,7 +3,6 @@ class FavoritesController < ApplicationController
     @favorite_topics = current_user.favorite_topics
     @comments = Comment.all
     @favorites =  Favorite.all
-    # いいねの数表示機能テスト中
   end
 
   def create
