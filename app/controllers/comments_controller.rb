@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
   def new
-    if logged_in? == false
+    # if logged_in? == false
+    unless logged_in?
      redirect_to root_path, danger: 'コメントするにはログインしてください'
     end
     @topic =  Topic.find_by(params[:topic_id])
